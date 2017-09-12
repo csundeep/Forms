@@ -49,3 +49,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Ubuntu 16.4.0 and nginx installations 
+
+sudo apt-get install git php7.0 php7.0-fpm nginx php7.0-common php7.0-curl php7.0-cli php7.0-gd php7.0-intl php7.0-imagick php7.0-mcrypt php7.0-mysql mysql-client libexpat1 ssl-cert php7.0-mbstring php7.0-xml php7.0-zip

@@ -15,7 +15,7 @@ Route::get('/', array('uses' => 'MessageBoardController@showMessageBoard'));
 
 Route::get('login', array('uses' => 'LoginController@showLogin'));
 Route::get('post/login', array('uses' => 'LoginController@showLogin'));
-Route::post('login', array('uses' => 'LoginController@doLogin'));
+Route::post('login', array('uses' => 'LoginController@doLogin'))->middleware('login');
 Route::post('post/login', array('uses' => 'LoginController@postLogin'));
 Route::get('logout', array('uses' => 'LoginController@doLogout'));
 Route::get('post/logout', array('uses' => 'LoginController@doLogout'));
@@ -30,3 +30,10 @@ Route::post('postQuery', array('uses' => 'MessageBoardController@postQuery'));
 Route::get('post/{id}', array('uses' => 'MessageBoardController@showPost'));
 Route::get('postComment/{comment}', array('uses' => 'MessageBoardController@postComment'));
 
+Route::get('test/{user}', function (\App\User $user) {
+
+    // we now have access to the $post object! no code necessary
+    dd($user);
+    // return the view and the post
+    return view('post.show', compact('post'));
+});
